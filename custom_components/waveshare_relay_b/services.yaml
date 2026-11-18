@@ -1,0 +1,30 @@
+
+pulse_relay:
+  name: Pulse relay
+  description: Trigger a hardware-timed pulse on a Waveshare relay.
+  fields:
+    relay:
+      name: Relay
+      description: Relay channel number (1–8).
+      required: true
+      example: 1
+      selector:
+        number:
+          min: 1
+          max: 8
+          step: 1
+          mode: box
+
+    duration_ms:
+      name: Duration
+      description: Pulse duration in milliseconds, in steps of 100.
+      required: false
+      default: 500
+      example: 500
+      selector:
+        number:
+          min: 100
+          max: 60000
+          step: 100
+          mode: box
+          unit_of_measurement: ms
